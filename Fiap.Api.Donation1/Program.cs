@@ -1,8 +1,24 @@
+using Fiap.Api.Donation1.Data;
+using Fiap.Api.Donation1.Repository;
+using Fiap.Api.Donation1.Repository.Interface;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+var connectionString = builder.Configuration.GetConnectionString("databaseUrl");
+builder.Services.AddDbContext<DataContext>(
+    options => options.UseSqlServer(connectionString).EnableSensitiveDataLogging(true)
+);
+
+
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
