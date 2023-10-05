@@ -1,6 +1,6 @@
 ﻿using Fiap.Api.Donation1.Models;
 using Fiap.Api.Donation1.Repository.Interface;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fiap.Api.Donation1.Controllers
@@ -19,45 +19,120 @@ namespace Fiap.Api.Donation1.Controllers
 
 
         [HttpGet]
-        public IList<UsuarioModel> Get()
+        public ActionResult<IList<UsuarioModel>> Get()
         {
-            return usuarioRepository.FindAll();
+            var usuarios = usuarioRepository.FindAll();
+
+            if ( usuarios == null || usuarios.Count == 0) { 
+                return NoContent();
+            } else
+            {
+                return Ok(usuarios);
+            }
+
         }
 
+
         [HttpGet("{id:int}")]
-        public UsuarioModel Get(int id)
+        public ActionResult<UsuarioModel> Get(int id)
         {
-            return usuarioRepository.FindById(id);
+            var usuario = usuarioRepository.FindById(id);
+
+            if ( usuario == null || usuario.UsuarioId == 0)
+            {
+                return NotFound();
+            } else
+            {
+                return Ok(usuario);
+            }
+
+           
         }
 
         [HttpPost]
-        public int Post([FromBody] UsuarioModel usuarioModel)
+        public ActionResult<UsuarioModel> Post([FromBody] UsuarioModel usuarioModel)
         {
-            var retorno = usuarioRepository.Insert(usuarioModel);
+            if ( ! ModelState.IsValid )
+            {
+                return BadRequest(ModelState);
+            } 
 
-            return retorno;
+            try { 
+                
+                usuarioRepository.Insert(usuarioModel);
+
+                var url = Request.GetEncodedUrl().EndsWith("/") ? 
+                                                Request.GetEncodedUrl() : 
+                                                Request.GetEncodedUrl() + "/";
+
+                var location = new Uri(url + usuarioModel.UsuarioId);
+
+
+                return Created(location, usuarioModel);
+
+            } catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPut("{id:int}")]
-        public void Post([FromRoute] int id, [FromBody] UsuarioModel usuarioModel)
+        public ActionResult<UsuarioModel> Put([FromRoute] int id, [FromBody] UsuarioModel usuarioModel)
         {
+            if ( ! ModelState.IsValid )
+            {
+                return BadRequest();
+            }
+
+            if ( id != usuarioModel.UsuarioId  )
+            {
+                return NotFound();
+            }
+
+
             usuarioRepository.Update(usuarioModel);
+
+            return NoContent();
+
         }
 
         [HttpDelete("{id:int}")]
-        public void Delete([FromRoute] int id) {
-            usuarioRepository.Delete(id);
+        public ActionResult<int> Delete([FromRoute] int id) {
+
+            if ( id == 0 )
+            {
+                return BadRequest();
+            }
+
+            var usuarioModel = usuarioRepository.FindById(id);
+
+            if ( usuarioModel == null )
+            {
+                return NotFound();
+            } else
+            {
+                usuarioRepository.Delete(id);
+                return NoContent();
+            }
+            
         }
 
 
         [HttpPost]
         [Route("Login")]
-        public UsuarioModel Login([FromBody] UsuarioModel usuarioModel)
+        public ActionResult<UsuarioModel> Login([FromBody] UsuarioModel usuarioModel)
         {
             var usuario = usuarioRepository
                 .FindByEmailAndSenha( usuarioModel.EmailUsuario, usuarioModel.Senha);
 
-            return usuario;
+            if ( usuario != null )
+            {
+                return Ok();
+            } else
+            {
+                return NotFound();
+            }
+
         }
 
 

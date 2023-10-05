@@ -20,6 +20,7 @@ namespace Fiap.Api.Donation1.Repository
         {
             var usuario = dataContext
                     .Usuarios
+                    .AsNoTracking()
                     .FirstOrDefault( u => u.Senha.Equals(senha) && 
                                           u.EmailUsuario.Equals(email)  );
 
@@ -28,7 +29,7 @@ namespace Fiap.Api.Donation1.Repository
 
         public IList<UsuarioModel> FindAll()
         {
-            return dataContext.Usuarios.ToList();
+            return dataContext.Usuarios.AsNoTracking().ToList();
         }
 
 
@@ -49,6 +50,7 @@ namespace Fiap.Api.Donation1.Repository
         {
             var usuario = dataContext
                     .Usuarios
+                    .AsNoTracking()
                     .FirstOrDefault(u => u.UsuarioId == id);
 
             return usuario;
