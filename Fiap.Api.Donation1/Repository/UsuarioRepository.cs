@@ -27,7 +27,7 @@ namespace Fiap.Api.Donation1.Repository
             return usuario;
         }
 
-        public IList<UsuarioModel> FindAll()
+        public async Task<IList<UsuarioModel>> FindAll()
         {
             return dataContext.Usuarios.AsNoTracking().ToList();
         }
@@ -58,8 +58,8 @@ namespace Fiap.Api.Donation1.Repository
 
         public int Insert(UsuarioModel usuarioModel)
         {
-            dataContext.Usuarios.Add(usuarioModel);
-            dataContext.SaveChanges();
+            dataContext.Usuarios.AddAsync(usuarioModel);
+            dataContext.SaveChangesAsync();
             return usuarioModel.UsuarioId;
         }
 

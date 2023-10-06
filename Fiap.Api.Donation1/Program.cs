@@ -1,7 +1,6 @@
 using Fiap.Api.Donation1.Data;
 using Fiap.Api.Donation1.Repository;
 using Fiap.Api.Donation1.Repository.Interface;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,8 +14,8 @@ builder.Services.AddDbContext<DataContext>(
     options => options.UseSqlServer(connectionString).EnableSensitiveDataLogging(true)
 );
 
-
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<ITipoProdutoRepository, TipoProdutoRepository>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
