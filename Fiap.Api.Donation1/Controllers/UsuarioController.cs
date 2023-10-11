@@ -1,5 +1,6 @@
 ﻿using Fiap.Api.Donation1.Models;
 using Fiap.Api.Donation1.Repository.Interface;
+using Fiap.Api.Donation1.Services;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 
@@ -120,14 +121,25 @@ namespace Fiap.Api.Donation1.Controllers
 
         [HttpPost]
         [Route("Login")]
-        public ActionResult<UsuarioModel> Login([FromBody] UsuarioModel usuarioModel)
+        public ActionResult<dynamic> Login([FromBody] UsuarioModel usuarioModel)
         {
             var usuario = usuarioRepository
                 .FindByEmailAndSenha( usuarioModel.EmailUsuario, usuarioModel.Senha);
 
             if ( usuario != null )
             {
-                return Ok();
+                var token = AuthenticationService.GetToken(usuario);
+                usuario.Senha = "";
+
+                var usuarioRetorno = new
+                {
+                    usuario = usuario,
+                    token = token,
+                    teste = "safasfdasfddas"
+                };
+
+
+                return Ok(usuarioRetorno);
             } else
             {
                 return NotFound();
