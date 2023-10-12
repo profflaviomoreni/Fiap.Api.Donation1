@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d02f63b3-f04b-41da-9759-d4044a1e26c0",
+		"_postman_id": "13a266e2-f559-4024-a121-6cc3bc6ab1c1",
 		"name": "Fiap - Donation 1",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "1209865"
@@ -101,7 +101,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"EmailUsuario\" : \"fmoreni@fiap.com.br\",\r\n    \"Senha\" : \"123456\",\r\n    \"Regra\" : \"teste\",\r\n    \"NomeUsuario\" : \"Teste\"\r\n}",
+							"raw": "{\r\n    \"EmailUsuario\" : \"admin-fiap@fiap.com.br\",\r\n    \"Senha\" : \"123456\",\r\n    \"Regra\" : \"teste\",\r\n    \"NomeUsuario\" : \"Teste\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -247,6 +247,332 @@
 								"api",
 								"usuario",
 								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tipo Produto",
+			"item": [
+				{
+					"name": "Tipo Produto - GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7014/api/TipoProduto",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"TipoProduto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo Produto - GET BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7014/api/TipoProduto/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"TipoProduto",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo Produto - POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Tablets\",\r\n    \"descricao\": \"Descrição para Tablets\",\r\n    \"token\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7014/api/TipoProduto",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"TipoProduto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo Produto - PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoProdutoId\": 4,\r\n    \"nome\": \"Tablets\",\r\n    \"descricao\": \"Descrição para Tablet\",\r\n    \"token\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7014/api/TipoProduto/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"TipoProduto",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tipo Produto - DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoProdutoId\": 4,\r\n    \"nome\": \"Tablets\",\r\n    \"descricao\": \"Descrição para Tablet\",\r\n    \"token\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7014/api/TipoProduto/4",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"TipoProduto",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Produto - GET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7014/api/Produto",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"Produto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Produto - GET BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7014/api/Produto/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"Produto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Curso",
+			"item": [
+				{
+					"name": "Curso - GET",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7014/api/Curso",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"Curso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Curso - GET ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7014/api/Curso/8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"Curso",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Curso - POST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Java\",\r\n    \"nivel\": \"Hard\",\r\n    \"preco\": \"922.00\",\r\n    \"conteudo\": \"Use the neural DRAM card, then you can navigate the redundant feed!\",\r\n    \"percentualConclusao\": 99,\r\n    \"concluido\": false,\r\n    \"id\": \"21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7014/api/Curso",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"Curso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Curso - PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Java 2\",\r\n    \"nivel\": \"Hard\",\r\n    \"preco\": \"922.00\",\r\n    \"conteudo\": \"Use the neural DRAM card, then you can navigate the redundant feed!\",\r\n    \"percentualConclusao\": 99,\r\n    \"concluido\": false,\r\n    \"id\": \"7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7014/api/Curso/7",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"Curso",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Curso - DELETE",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Java 2\",\r\n    \"nivel\": \"Hard\",\r\n    \"preco\": \"922.00\",\r\n    \"conteudo\": \"Use the neural DRAM card, then you can navigate the redundant feed!\",\r\n    \"percentualConclusao\": 99,\r\n    \"concluido\": false,\r\n    \"id\": \"7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7014/api/Curso/8",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"Curso",
+								"8"
 							]
 						}
 					},

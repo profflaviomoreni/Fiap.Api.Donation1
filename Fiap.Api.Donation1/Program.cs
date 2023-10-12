@@ -1,3 +1,4 @@
+using Fiap.Api.Donation1;
 using Fiap.Api.Donation1.Data;
 using Fiap.Api.Donation1.Repository;
 using Fiap.Api.Donation1.Repository.Interface;
@@ -23,9 +24,16 @@ builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
 
 
 #region autenticacao
+bool CustomLifetimeValidator(DateTime? notBefore, DateTime? expires, SecurityToken tokenToValidate, TokenValidationParameters @param)
+{
+    if (expires != null)
+    {
+        return expires > DateTime.UtcNow;
+    }
+    return false;
+}
 
-
-var key = Encoding.ASCII.GetBytes("68f1549c-3163-4ae5-a7b5-7b406c23c435");
+var key = Encoding.ASCII.GetBytes(Settings.SECRET_TOKEN);
 
 builder.Services.AddAuthentication(a => {
         a.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -39,7 +47,7 @@ builder.Services.AddAuthentication(a => {
             ValidateIssuerSigningKey = true,
             ValidateIssuer = false,
             IssuerSigningKey = new SymmetricSecurityKey(key),
-            //LifetimeValidator = ... ,
+            LifetimeValidator = CustomLifetimeValidator, // forma de validar se o token está expirado
             ValidateAudience = false,
             ValidateLifetime = true,
             RequireExpirationTime = true

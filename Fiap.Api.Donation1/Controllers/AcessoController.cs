@@ -6,11 +6,13 @@ namespace Fiap.Api.Donation1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class AcessoController : ControllerBase
     {
 
         [HttpGet]
         [Route("Anonimo")]
+        [AllowAnonymous]
         public string Anonimo()
         {
             return "Anonimo";
@@ -34,6 +36,7 @@ namespace Fiap.Api.Donation1.Controllers
 
         [HttpGet]
         [Route("Operador")]
+        [Authorize(Roles = "admin, operador")]
         public string Operador()
         {
             return "Operador";
@@ -41,6 +44,7 @@ namespace Fiap.Api.Donation1.Controllers
 
         [HttpGet]
         [Route("revisor")]
+        [Authorize(Roles = "admin, operador, revisor")]
         public string Revisor()
         {
             return "Revisor";

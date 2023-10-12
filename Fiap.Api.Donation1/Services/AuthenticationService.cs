@@ -11,7 +11,7 @@ namespace Fiap.Api.Donation1.Services
 
         public static string GetToken(UsuarioModel usuarioModel)
         {
-            byte[] secret = Encoding.ASCII.GetBytes("68f1549c-3163-4ae5-a7b5-7b406c23c435");
+            byte[] secret = Encoding.ASCII.GetBytes(Settings.SECRET_TOKEN);
 
             JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();
 
@@ -21,7 +21,7 @@ namespace Fiap.Api.Donation1.Services
                 {
                     new Claim( ClaimTypes.Name, usuarioModel.NomeUsuario ),
                     new Claim( ClaimTypes.Role, usuarioModel.Regra),
-                    new Claim( ClaimTypes.Email, usuarioModel.EmailUsuario)
+                    new Claim( ClaimTypes.Email, usuarioModel.EmailUsuario),
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(1),
                 SigningCredentials = new SigningCredentials( 

@@ -134,8 +134,7 @@ namespace Fiap.Api.Donation1.Controllers
                 var usuarioRetorno = new
                 {
                     usuario = usuario,
-                    token = token,
-                    teste = "safasfdasfddas"
+                    token = token
                 };
 
 

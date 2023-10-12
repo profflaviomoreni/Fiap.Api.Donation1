@@ -2,6 +2,7 @@
 using Fiap.Api.Donation1.Models;
 using Fiap.Api.Donation1.Repository.Interface;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Fiap.Api.Donation1.Repository
 {
@@ -13,6 +14,33 @@ namespace Fiap.Api.Donation1.Repository
         {
             dataContext = ctx;
         }
+
+        public async Task<int> Count()
+        {
+            return dataContext.Produtos.Count();
+        }
+
+        public async Task<IList<ProdutoModel>> GetAll(int pagina = 0, int tamanho = 10)
+        {
+            var produtos = dataContext.Produtos
+                            .Skip(tamanho * pagina)
+                            .Take(tamanho)
+                            .ToList();
+
+            return produtos == null ? new List<ProdutoModel>() : produtos;
+        }
+
+        public async Task<IList<ProdutoModel>> GetAllOrderByDataCadastroAsc(DateTime? dataReferencia, int tamanho)
+        {
+            var produtos = await dataContext.Produtos
+                            .Where( p => p.DataCadastro > dataReferencia )
+                            .OrderBy( p => p.DataCadastro)
+                            .Take(tamanho)
+                            .ToListAsync();
+
+            return produtos == null ? new List<ProdutoModel>() : produtos;
+        }
+
 
         public async Task<IList<ProdutoModel>> FindAll()
         {
@@ -72,6 +100,6 @@ namespace Fiap.Api.Donation1.Repository
             Delete(produtoModel);
         }
 
-
+        
     }
 }

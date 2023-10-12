@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace Fiap.Api.Donation1.Models
 {
     [Table("Produto")]
+    [Index(nameof(DataCadastro),IsUnique = false)]
     public class ProdutoModel
     {
 
@@ -23,7 +25,6 @@ namespace Fiap.Api.Donation1.Models
         public string SugestaoTroca { get; set; }
 
         public double Valor { get; set; }
-
 
         public DateTime DataCadastro { get; set; } = DateTime.Now;
 
@@ -45,5 +46,23 @@ namespace Fiap.Api.Donation1.Models
         [ForeignKey(nameof(TipoProdutoId))]
         public TipoProdutoModel TipoProduto { get; set; }
 
+        public ProdutoModel()
+        {
+
+        }
+
+        public ProdutoModel(int produtoId,string nome, bool disponivel, string descricao, string sugestaoTroca, double valor, int usuarioId, int tipoProdutoId)
+        {
+            ProdutoId = produtoId;
+            Nome = nome;
+            Disponivel = disponivel;
+            Descricao = descricao;
+            SugestaoTroca = sugestaoTroca;
+            Valor = valor;
+            UsuarioId = usuarioId;
+            TipoProdutoId = tipoProdutoId;
+            DataCadastro = DateTime.Now;
+            DataExpiracao = DateTime.Now.AddMonths(18);
+        }
     }
 }
