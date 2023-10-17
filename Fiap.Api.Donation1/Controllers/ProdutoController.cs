@@ -5,7 +5,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Fiap.Api.Donation1.Controllers
 {
-    [Route("api/[controller]")]
+
+    [ApiVersion("1.0", Deprecated = true)]
+    [ApiVersion("2.0")]
+    [ApiVersion("3.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
     public class ProdutoController : ControllerBase
     {
@@ -17,8 +21,9 @@ namespace Fiap.Api.Donation1.Controllers
             
         }
 
-
+        
         [HttpGet]
+        [ApiVersion("3.0")]
         public async Task<ActionResult<dynamic>> GetProdutos(
             [FromQuery] DateTime? dataReferencia, 
             [FromQuery] int tamanho = 5)
@@ -43,10 +48,13 @@ namespace Fiap.Api.Donation1.Controllers
 
             return Ok(retorno);
         }
+        
 
 
-        /*
+
         [HttpGet]
+        [ApiVersion("2.0", Deprecated = true)]
+        
         public async Task<ActionResult<dynamic>> GetProdutos(
             [FromQuery] int pagina = 0,
             [FromQuery] int tamanho = 5)
@@ -80,11 +88,12 @@ namespace Fiap.Api.Donation1.Controllers
 
             return Ok(retorno);
         }
-        */
+        
 
 
-        /*
+
         [HttpGet]
+        [ApiVersion("1.0", Deprecated = true)]
         public async Task<ActionResult<IList<ProdutoModel>>> GetProdutos()
         {
             var produtos = await produtoRepository.FindAll();
@@ -95,7 +104,7 @@ namespace Fiap.Api.Donation1.Controllers
 
             return Ok(produtos);
         }
-        */
+        
 
         [HttpGet("{id}")]
         public async Task<ActionResult<ProdutoModel>> GetProdutoModel(int id)
