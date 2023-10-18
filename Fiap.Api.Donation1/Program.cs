@@ -1,7 +1,10 @@
+using AutoMapper;
 using Fiap.Api.Donation1;
 using Fiap.Api.Donation1.Data;
+using Fiap.Api.Donation1.Models;
 using Fiap.Api.Donation1.Repository;
 using Fiap.Api.Donation1.Repository.Interface;
+using Fiap.Api.Donation1.ViewModel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -27,6 +30,23 @@ builder.Services.AddDbContext<DataContext>(
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<ITipoProdutoRepository, TipoProdutoRepository>();
 builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+
+#region automapper
+var mapperConfig = new AutoMapper.MapperConfiguration( c =>
+{
+    c.AllowNullDestinationValues = true;
+
+    c.CreateMap<LoginRequestVM, UsuarioModel>();
+    c.CreateMap<UsuarioModel, LoginResponseVM>();
+
+    c.CreateMap<UsuarioModel, UsuarioResponseVM>();
+
+}); 
+
+IMapper mapper = mapperConfig.CreateMapper();
+builder.Services.AddSingleton(mapper);
+#endregion
+
 
 
 #region autenticacao
