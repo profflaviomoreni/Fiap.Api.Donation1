@@ -4,6 +4,7 @@ using Fiap.Api.Donation1.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Fiap.Api.Donation1.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231018221325_Troca")]
+    partial class Troca
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,8 +80,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 1,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1802),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1803),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3847),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3848),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 1",
@@ -90,8 +93,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 2,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1811),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1811),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3857),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3858),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 2",
@@ -103,8 +106,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 3,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1813),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1813),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3859),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3859),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 3",
@@ -116,8 +119,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 4,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1814),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1815),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3861),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3861),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 4",
@@ -129,8 +132,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 5,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1816),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1816),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3862),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3863),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 5",
@@ -142,8 +145,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 6,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1817),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1818),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3864),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3864),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 6",
@@ -155,8 +158,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 7,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1819),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1819),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3866),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3866),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 7",
@@ -168,8 +171,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 8,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1821),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1821),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3868),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3868),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 8",
@@ -181,8 +184,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 9,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1822),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1823),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3869),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3870),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 9",
@@ -194,8 +197,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 10,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1824),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1824),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3871),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3871),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 10",
@@ -207,8 +210,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 11,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1825),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1826),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3872),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3873),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 11",
@@ -220,8 +223,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 12,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1827),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1827),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3874),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3874),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 12",
@@ -233,8 +236,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 13,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1828),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1828),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3876),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3876),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 13",
@@ -246,8 +249,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 14,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1830),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1830),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3877),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3878),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 14",
@@ -259,8 +262,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 15,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1831),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1831),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3879),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3879),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 15",
@@ -272,8 +275,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 16,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1833),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1833),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3917),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3917),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 16",
@@ -285,8 +288,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 17,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1834),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1834),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3919),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3919),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 17",
@@ -298,8 +301,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 18,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1835),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1836),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3920),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3921),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 18",
@@ -311,8 +314,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 19,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1837),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1837),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3922),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3922),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 19",
@@ -324,8 +327,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 20,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1838),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1839),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3923),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3924),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 20",
@@ -337,8 +340,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 21,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1840),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1840),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3925),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3926),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 21",
@@ -350,8 +353,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 22,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1841),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1842),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3927),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3928),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 22",
@@ -363,8 +366,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 23,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1843),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1843),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3929),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(3929),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 23",
@@ -376,8 +379,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 24,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1844),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1845),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4260),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4260),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 24",
@@ -389,8 +392,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 25,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1846),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1846),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4262),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4262),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 25",
@@ -402,8 +405,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 26,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1847),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1847),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4263),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4264),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 26",
@@ -415,8 +418,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 27,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1849),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1850),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4265),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4265),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 27",
@@ -428,8 +431,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 28,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1851),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1851),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4267),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4267),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 28",
@@ -441,8 +444,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 29,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1852),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1853),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4268),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4269),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 29",
@@ -454,8 +457,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 30,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1854),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1854),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4270),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4270),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 30",
@@ -467,8 +470,8 @@ namespace Fiap.Api.Donation1.Migrations
                         new
                         {
                             ProdutoId = 31,
-                            DataCadastro = new DateTime(2023, 10, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1855),
-                            DataExpiracao = new DateTime(2025, 4, 18, 19, 24, 32, 436, DateTimeKind.Local).AddTicks(1856),
+                            DataCadastro = new DateTime(2023, 10, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4271),
+                            DataExpiracao = new DateTime(2025, 4, 18, 19, 13, 25, 720, DateTimeKind.Local).AddTicks(4272),
                             Descricao = "Descrição",
                             Disponivel = true,
                             Nome = "Produto 31",
@@ -538,9 +541,6 @@ namespace Fiap.Api.Donation1.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
                     b.HasKey("TrocaId");

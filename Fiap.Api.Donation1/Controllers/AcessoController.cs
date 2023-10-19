@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Fiap.Api.Donation1.Controllers
 {
@@ -47,6 +48,16 @@ namespace Fiap.Api.Donation1.Controllers
         [Authorize(Roles = "admin, operador, revisor")]
         public string Revisor()
         {
+            int? userId = 0;
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            if (identity != null) {
+                var userIdClaim = identity.FindFirst("UsuarioId");
+                if (userIdClaim != null && userIdClaim.Value != null)
+                {
+                    userId = Int16.Parse(userIdClaim.Value);
+                }
+            }
+
             return "Revisor";
         }
 

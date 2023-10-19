@@ -101,7 +101,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"EmailUsuario\" : \"admin-fiap@fiap.com.br\",\r\n    \"Senha\" : \"123456\",\r\n    \"Regra\" : \"teste\",\r\n    \"NomeUsuario\" : \"Teste\"\r\n}",
+							"raw": "{\r\n    \"EmailUsuario\" : \"admin-fiap@fiap.com.br\",\r\n    \"Senha\" : \"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -156,7 +156,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7014/api/usuario/5",
+							"raw": "https://localhost:7014/api/usuario/3",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -165,7 +165,7 @@
 							"path": [
 								"api",
 								"usuario",
-								"5"
+								"3"
 							]
 						}
 					},
@@ -408,7 +408,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7014/api/Produto",
+							"raw": "https://localhost:7014/api/v2/produto",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -416,7 +416,8 @@
 							"port": "7014",
 							"path": [
 								"api",
-								"Produto"
+								"v2",
+								"produto"
 							]
 						}
 					},
@@ -428,7 +429,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:7014/api/Produto/1",
+							"raw": "https://localhost:7014/api/v1/Produto/1",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -436,6 +437,7 @@
 							"port": "7014",
 							"path": [
 								"api",
+								"v1",
 								"Produto",
 								"1"
 							]
@@ -573,6 +575,83 @@
 								"api",
 								"Curso",
 								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Troca",
+			"item": [
+				{
+					"name": "Troca - POST",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlByb2YgQWRtaW4iLCJyb2xlIjoicmV2aXNvciIsImVtYWlsIjoiYWRtaW4tZmlhcEBmaWFwLmNvbS5iciIsIlVzdWFyaW9JZCI6IjYiLCJuYmYiOjE2OTc2NzM2NTksImV4cCI6MTY5NzY3MzcxOSwiaWF0IjoxNjk3NjczNjU5fQ.iYVnhW2OkloQcirSMNjy4UWSjHnLqhIjVfYEzbOKedI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"produtoId1\" : \"10\",\r\n    \"produtoId2\" : \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7014/api/v3/troca",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"v3",
+								"troca"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Troca - GET",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlByb2YgQWRtaW4iLCJyb2xlIjoicmV2aXNvciIsImVtYWlsIjoiYWRtaW4tZmlhcEBmaWFwLmNvbS5iciIsIlVzdWFyaW9JZCI6IjYiLCJuYmYiOjE2OTc2NzY2MjAsImV4cCI6MTY5NzY3NjY4MCwiaWF0IjoxNjk3Njc2NjIwfQ.8ypHwLoT2hIs-F0mnwfXy3_Q7H1iNx7yLeEq2CMkWvc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7014/api/v3/troca/ee2ed399-235b-470c-9bc8-38720c2d6b84",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7014",
+							"path": [
+								"api",
+								"v3",
+								"troca",
+								"ee2ed399-235b-470c-9bc8-38720c2d6b84"
 							]
 						}
 					},

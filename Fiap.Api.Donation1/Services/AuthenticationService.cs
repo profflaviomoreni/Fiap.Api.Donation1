@@ -22,7 +22,9 @@ namespace Fiap.Api.Donation1.Services
                     new Claim( ClaimTypes.Name, usuarioModel.NomeUsuario ),
                     new Claim( ClaimTypes.Role, usuarioModel.Regra),
                     new Claim( ClaimTypes.Email, usuarioModel.EmailUsuario),
+                    new Claim( "UsuarioId", usuarioModel.UsuarioId.ToString())
                 }),
+
                 Expires = DateTime.UtcNow.AddMinutes(1),
                 SigningCredentials = new SigningCredentials( 
                                 new SymmetricSecurityKey(secret) , 
